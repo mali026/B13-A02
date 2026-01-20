@@ -8,6 +8,8 @@
   color: white;
   font-size: 1rem;
 }
+
+
 .navbar{
     width: 100%;
     height: 92px;
@@ -33,9 +35,15 @@
 
 .highlight {
   background: linear-gradient(30deg, rgba(247, 233, 63, 1), rgba(251, 9, 180, 1), rgba(145, 0, 248, 1));
+  background-clip: text;
   -webkit-background-clip: text;
+
+  color: transparent;
   -webkit-text-fill-color: transparent;
+
+  display: inline-block;
 }
+
 
 .menu{
     list-style: none;
@@ -70,33 +78,214 @@ a{
 }
 
 
-@media screen and (max-width: 576px){
 
+
+
+
+.banner{
+    width: 100%;
+    min-height: 760px;
+    background-image: url(../B13-A02-TechWave/assets/hero-bg.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+
+.banner-container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.hero-visual{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.hero-visual::before{
+    content: "";
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(251, 9, 180, 0.35),
+        transparent 70%
+    );
+    animation: glowRotate 8s linear infinite;
+}
+
+
+.hero-circle{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: pulse 3s infinite ease-in-out;
+    filter: drop-shadow(0 0 35px rgba(180, 0, 255, 0.6));
+}
+
+
+
+.hero-mic{
+    position: absolute;
+    width: 120px;
+    animation: floatMic 4s ease-in-out infinite;
+}
+
+
+.badge-new{
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: #2dff9a;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    z-index: 2;
+    animation: pop 2s infinite;
+}
+
+
+
+.banner-content{
+    text-align: center;
+    max-width: 620px;
+}
+
+.banner-content h1{
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.banner-content p{
+    font-size: 1rem;
+    opacity: 0.85;
+    margin-bottom: 24px;
+}
+
+
+.banner-buttons{
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.btn-primary{
+    padding: 12px 26px;
+    border-radius: 30px;
+    background: linear-gradient(90deg,#f7e93f,#fb09b4,#9100f8);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary{
+    padding: 12px 26px;
+    border-radius: 30px;
+    border: 1px solid #2dff9a;
+    color: #2dff9a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/*Animations*/
+
+@keyframes pulse{
+    0%{ transform: scale(1); }
+    50%{ transform: scale(1.05); }
+    100%{ transform: scale(1); }
+}
+
+@keyframes floatMic{
+    0%{ transform: translateY(0); }
+    50%{ transform: translateY(-8px); }
+    100%{ transform: translateY(0); }
+}
+
+@keyframes pop{
+    0%,100%{ transform: scale(1); }
+    50%{ transform: scale(1.15); }
+}
+
+@keyframes glowRotate{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+
+
+
+/* responsiveness */
+
+
+@media screen and (max-width: 576px){
+   /* for navbar */
     .navbar{
         height: 70px;
     }
-
     .navbar-container{
         padding: 0 20px;
-    }
-
-    
+    } 
     .menu,
     #Subscribe-button {
         display: none;
     }
-
-
     #hamburger{
         display: block;
     }
-
-    
     .nav-logo h1{
         font-size: 1.8rem;
     }
-}
+    /* end of navbar */
 
+    /* for banner */
+    .banner{
+    width: 100%;
+    min-height: 466px;
+}
+     .banner-container{
+    width: 100%;
+    max-width: 576px;
+    gap: 24px;
+}
+   .hero-visual{
+    width: 250px;
+    height: 250px;
+    margin-top: 40px;
+
+}
+.hero-mic{
+    width: 70px;
+    padding: 60px;
+    
+    
+}
+.banner-buttons{
+    margin-bottom: 40px;
+    
+}
+/* end of banner */
+
+
+}
     @media screen and (min-width: 576px) and (max-width: 992px){
 
     .navbar{
@@ -126,11 +315,3 @@ a{
         display: none;
     }
 }
-
-
-
-
-
-
-
-
