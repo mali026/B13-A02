@@ -152,7 +152,7 @@ a{
     position: absolute;
     top: 8px;
     right: 12px;
-    background: #2dff9a;
+    background: #00FF88;
     color: #000;
     font-size: 1rem;
     font-weight: 700;
@@ -200,8 +200,8 @@ a{
 .btn-secondary{
     padding: 12px 26px;
     border-radius: 30px;
-    border: 1px solid #2dff9a;
-    color: #2dff9a;
+    border: 1px solid #00FF88;
+    color: #00FF88;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -229,6 +229,73 @@ a{
 @keyframes glowRotate{
     from{ transform: rotate(0deg); }
     to{ transform: rotate(360deg); }
+}
+
+/* about section */
+.about{
+    width: 100%;
+    background-color: rgba(26, 11, 46, 1);
+
+}
+.about-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 24px 120px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.about-content{
+     max-width: 780px;
+     text-align: center;
+}
+
+.about-content h1{
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+.para-one{
+    font-size: 0.95rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin-bottom: 24px;
+}
+.para-two{
+    font-size: 0.9rem;
+    opacity: 0.75;
+}
+
+.about-line {
+  width: 100%; 
+  height: 1px;
+  margin: 80px 0;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.about-item{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px;
+    text-align: center;
+}
+
+.item h1{
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #00FF88;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.item p{
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    opacity: 0.7;
 }
 
 
@@ -283,6 +350,13 @@ a{
     
 }
 /* end of banner */
+
+/* about section */
+
+.about-item{
+    
+    grid-template-columns: repeat(2, 1fr);
+}
 
 
 }
