@@ -116,7 +116,7 @@ a{
 .banner{
     width: 100%;
     min-height: 760px;
-    background-image: url(../B13-A02-TechWave/assets/hero-bg.png);
+    background-image: url(/B13-A02-TechWave/assets/hero-bg.png);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -554,7 +554,7 @@ a{
 
 /* Footer */
 .footer-section {
-    background-image: url(../B13-A02-TechWave/assets/footer-bg.png);
+    background-image: url(/B13-A02-TechWave/assets/footer-bg.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
