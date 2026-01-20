@@ -55,22 +55,53 @@
 .menu a{
     text-decoration: none;
     color: rgba(255, 255, 255, 1);
+    display: inline-block;      
+    transition: transform 0.25s ease, color 0.25s ease;
 }
 
 a{
     text-decoration: none;
     color: rgba(255, 255, 255, 1);
 }
+ .menu a:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    transition: all 0.25s ease;
+}
 .primary-button{
     width: 135px;
     height: 44px;
-    background: linear-gradient(90deg, rgba(247, 233, 63, 1), rgba(251, 9, 180, 1), rgba(145, 0, 248, 1));
+    background: linear-gradient(
+        90deg,
+        rgba(247, 233, 63, 1),
+        rgba(251, 9, 180, 1),
+        rgba(145, 0, 248, 1)
+    );
     border-radius: 20px;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 auto;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+.primary-button:hover{
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 
+        0 12px 25px rgba(145, 0, 248, 0.35),
+        0 0 15px rgba(251, 9, 180, 0.4);
+    filter: brightness(1.1);
+}
+ .primary-button:active{
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 6px 15px rgba(145, 0, 248, 0.3);
 }
 #hamburger{
     display: none;
@@ -207,6 +238,14 @@ a{
     gap: 8px;
 }
 
+.btn-primary:hover,
+.btn-secondary:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    transition: all 0.25s ease;
+}
+
+
 /*Animations*/
 
 @keyframes pulse{
@@ -297,6 +336,100 @@ a{
     letter-spacing: 1px;
     opacity: 0.7;
 }
+/* end of about section */
+
+/* why choose section */
+.why-choose{
+    width: 100%;
+    background-color: rgba(35, 14, 61, 1);
+}
+
+.why-container{
+    max-width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 40px;
+}
+
+.why-container h1{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 120px;
+}
+
+
+.card-container{
+    width: 100%;
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+
+    gap: 30px;
+}
+
+
+.card-container > div{
+    background-color: rgba(53, 17, 101, 0.4);
+    border-radius: 18px;
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+
+#card-01{
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+}
+
+
+#card-02{
+    grid-column: 2 / span 2;
+    grid-row: 1;
+}
+
+#card-03{
+    grid-column: 2 / span 2;
+    grid-row: 2;
+}
+
+
+#card-04{
+    grid-column: 1/ span 2;
+    grid-row: 3;
+}
+
+#card-05{
+    grid-column: 3 / span 1;
+    grid-row: 3;
+}
+
+
+.card-container img{
+    width: 36px;
+}
+
+.card-container h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.card-container p{
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.7);
+}
+/* end of why-choose section */
 
 
 
@@ -357,6 +490,27 @@ a{
     
     grid-template-columns: repeat(2, 1fr);
 }
+/* end of about section */
+
+
+/* why-choose section */
+  .why-container{
+        padding: 0 20px;
+    }
+.card-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    /* Reset all cards to single column */
+    #card-01,
+    #card-02,
+    #card-03,
+    #card-04,
+    #card-05{
+        grid-column: auto;
+        grid-row: auto;
+    }
 
 
 }
